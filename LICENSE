@@ -212,8 +212,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ------------------------------------------------------------------------------
 
-This product bundles the Unitree G1 Description (URDF & MJCF), which is
-available under a BSD-3-Clause license with the following terms:
+This product bundles the Unitree G1 Description and H1 Description
+(URDF & MJCF), which is available under a BSD-3-Clause license with the
+following terms:
 
 BSD 3-Clause License
 
