@@ -1,57 +1,30 @@
-# Unitree H1 Description (URDF, USD, and MJCF)
+# Unitree H1 Robot Simulation Assets
 
 ## Overview
 
-This package includes a universal humanoid robot description (URDF & MJCF) for the [Unitree H1](https://www.unitree.com/h1), developed by [Unitree Robotics](https://www.unitree.com/).
+This package contains robot assets for the [H1](https://www.unitree.com/h1) developed by [Unitree](https://www.unitree.com/).
 
-The file `urdf/h1.urdf` is description for H1 without hands, and `urdf/h1_with_hand.urdf` for H1 with dexterous hands. Both `urdf/h1.urdf` and `urdf/h1_with_hand.urdf` support isaacgym environment.
+![Unitree H1 Robot Rendering](h1.png)
 
-<p align="center">
-  <img src="doc/H1.png" width="500"/>
-</p>
+The subfolders contain:
 
-Basic H1 Humanoid has 19 joints:
+- **urdf**: Robot description format files
+- **mjcf**: MuJoCo XML files
+- **meshes**: Mesh data consumbed by both URDF and MJCF
+- **usd**: Universal Scene Description format files
 
-```text
-root [⚓] => /pelvis/
-    left_hip_yaw_joint [⚙+Z] => /left_hip_yaw_link/
-        left_hip_roll_joint [⚙+X] => /left_hip_roll_link/
-            left_hip_pitch_joint [⚙+Y] => /left_hip_pitch_link/
-                left_knee_joint [⚙+Y] => /left_knee_link/
-                    left_ankle_joint [⚙+Y] => /left_ankle_link/
-    right_hip_yaw_joint [⚙+Z] => /right_hip_yaw_link/
-        right_hip_roll_joint [⚙+X] => /right_hip_roll_link/
-            right_hip_pitch_joint [⚙+Y] => /right_hip_pitch_link/
-                right_knee_joint [⚙+Y] => /right_knee_link/
-                    right_ankle_joint [⚙+Y] => /right_ankle_link/
-    torso_joint [⚙+Z] => /torso_link/
-        left_shoulder_pitch_joint [⚙+Y] => /left_shoulder_pitch_link/
-            left_shoulder_roll_joint [⚙+X] => /left_shoulder_roll_link/
-                left_shoulder_yaw_joint [⚙+Z] => /left_shoulder_yaw_link/
-                    left_elbow_joint [⚙+Y] => /left_elbow_link/
-        right_shoulder_pitch_joint [⚙+Y] => /right_shoulder_pitch_link/
-            right_shoulder_roll_joint [⚙+X] => /right_shoulder_roll_link/
-                right_shoulder_yaw_joint [⚙+Z] => /right_shoulder_yaw_link/
-                    right_elbow_joint [⚙+Y] => /right_elbow_link/
-```
+## Sources
 
-## Usages
+### URDF and MJCF
 
-### [MuJoCo](https://github.com/google-deepmind/mujoco)(recommend)
+The MJCF, URDF and mesh files were retrieved from the [unitree_ros repository](https://github.com/unitreerobotics/unitree_ros/tree/master/robots/h1_description) at a3b70ca.
 
-```bash
-pip install mujoco
-python -m mujoco.viewer --mjcf=mjcf/scene.xml
-```
+### USD
 
-### RViz
+The USD model was collected using IsaacSim from the IsaacLab robot assets. The specific source URLs are available in the [collection record](usd/.collect.mapping.json).
 
-```bash
-roslaunch h1_description display.launch
-```
+For changes made to the model for simulation in Newton, please refer to the Git commit history of this folder.
 
-### Gazebo
+## License
 
-```bash
-roslaunch h1_description gazebo.launch
-```
+This model is released under a [BSD-3-Clause License](LICENSE).
