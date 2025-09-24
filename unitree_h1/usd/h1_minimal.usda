@@ -28,7 +28,7 @@
             double voxelCeiling = 460
         }
         dictionary omni_layer = {
-            string authoring_layer = "./h1_minimal.usd"
+            string authoring_layer = "./h1_minimal.usda"
             dictionary locked = {
             }
             dictionary muteness = {
